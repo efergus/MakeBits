@@ -1,5 +1,6 @@
 
 LIBNAME = name
+TESTNAME = try
 
 IDIR = .
 ODIR = obj
@@ -11,11 +12,11 @@ CXX = g++
 CXXFLAGS = -I$(IDIR)
 
 $(ODIR)/lib$(LIBNAME).a: $(OBJS)
-	ar -rcs $(ODIR)/lib.whacka $?
+	ar -rcs $(ODIR)/lib$(LIBNAME).a $?
 
 obj/%.o: %.cpp $(DEPS)
 	@mkdir -p $(ODIR)
 	$(CXX) -c -o $@ $< $(CXXFLAGS)
 
-try: $(OBJS)
-	$(CXX) -o try try.cpp -L$(ODIR) -l$(LIBNAME) (CXXFLAGS)
+$(TESTNAME): $(OBJS)
+	$(CXX) -o $(TESTNAME) $(TESTNAME).cpp -L$(ODIR) -l$(LIBNAME) (CXXFLAGS)
