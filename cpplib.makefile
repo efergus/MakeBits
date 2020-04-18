@@ -18,4 +18,4 @@ obj/%.o: %.cpp $(DEPS)
 	$(CXX) -c -o $@ $< $(CXXFLAGS)
 
 try: $(OBJS)
-	$(CXX) -o try try.cpp -L$(ODIR) -l$(LIBNAME) (CFLAGS)
+	$(CXX) -o try try.cpp -L$(ODIR) -l$(LIBNAME) (CXXFLAGS)
