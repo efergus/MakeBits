@@ -1,4 +1,7 @@
 
-test_var += a test
+test_var := A/notmake
 test:
-	echo $(test_var)
+	echo $(patsubst %.%, , $(wildcard *))
+
+notmake:
+	make -C A -f notmake
